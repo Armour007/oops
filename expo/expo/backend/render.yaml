@@ -1,0 +1,32 @@
+# Render.com Deployment Configuration
+# https://render.com/docs/yaml-spec
+
+services:
+  - type: web
+    name: utopia-api
+    runtime: node
+    region: singapore # Closest to India
+    plan: free # Upgrade to starter ($7/mo) for production
+
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+
+    healthCheckPath: /health
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        sync: false # Set manually in dashboard
+      - key: JWT_SECRET
+        generateValue: true # Auto-generate secure value
+      - key: JWT_EXPIRE
+        value: 30d
+      - key: CORS_ORIGINS
+        value: https://utopia.app
+      - key: RATE_LIMIT_MAX_GENERAL
+        value: 100
+      - key: RATE_LIMIT_MAX_AUTH
+        value: 10
