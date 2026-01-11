@@ -1,0 +1,54 @@
+# Unity
+**/Library/
+**/Temp/
+**/Obj/
+**/Build/
+**/Builds/
+**/Logs/
+**/UserSettings/
+*.csproj
+*.sln
+*.pidb
+*.unityproj
+*.suo
+*.swp
+*.user
+*.userprefs
+*.pidb.meta
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Node
+**/node_modules/
+
+# Expo
+**/.expo/
+**/dist/
+
+# Build
+*.apk
+*.aab
+*.ipa
+
+# Environment
+.env
+.env.local
+.env*.local
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.sublime-*
+
+# Large binary files
+*.dll
+*.so
+*.a
+*.dylib
